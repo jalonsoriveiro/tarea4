@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -53,17 +54,21 @@ public class Tarea4 {
         JTextField textFname = new JTextField();
         JTextField textLname = new JTextField();
         JTextField textAge = new JTextField();
-        
-        // create JButtons
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("dam");
+        comboBox.addItem("asir");	
+		        
+// create JButtons
         JButton btnAdd = new JButton("Add");
         JButton btnDelete = new JButton("Delete");
         JButton btnUpdate = new JButton("Update");     
         
         textId.setBounds(20, 20, 100, 25);
         textFname.setBounds(20, 50, 100, 25);
-        textLname.setBounds(20, 80, 100, 25);
-        textAge.setBounds(20,110, 100, 25);
-        
+        //textLname.setBounds(20, 80, 100, 25);
+       // textAge.setBounds(20,110, 100, 25);
+        comboBox.setBounds(500, 20, 100, 25);
+
         btnAdd.setBounds(150, 20, 100, 25);
         btnUpdate.setBounds(150, 50, 100, 25);
         btnDelete.setBounds(150, 80, 100, 25);
@@ -79,8 +84,9 @@ public class Tarea4 {
         // add JTextFields to the jframe
         frame.add(textId);
         frame.add(textFname);
-        frame.add(textLname);
-        frame.add(textAge);
+      //  frame.add(textLname);
+       // frame.add(textAge);
+        frame.add(comboBox);
     
         // add JButtons to the jframe
         frame.add(btnAdd);
@@ -98,7 +104,7 @@ public class Tarea4 {
              
                 row[0] = textId.getText();
                 row[1] = textFname.getText();
-                row[2] = textLname.getText();
+                row[2] = comboBox.getSelectedItem();
                // row[3] = textAge.getText();
                 
                 // add row to the model
